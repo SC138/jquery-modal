@@ -1,0 +1,15 @@
+.popup-hidden{
+    display: none;
+}
+
+.popup-visible{
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 2px solid #000;
+    padding: 20px;
+    background-color: red;
+    border-radius: 20px;
+}
