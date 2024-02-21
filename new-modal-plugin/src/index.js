@@ -1,9 +1,22 @@
 import React, { useState } from "react";
-import { render } from "react-dom";
-import { Popup } from "./lib/popup";
+import ReactDOM from "react-dom";
+import Modal from "./lib/modal.jsx";
+import "./lib/global.css";
 
 const App = () => {
-  return <Popup />;
+  const [modalIsOpen, setModalIsOpen] = useState(false);
+  const openModal = () => setModalIsOpen(true);
+  const closeModal = () => setModalIsOpen(false);
+
+  const test = false;
+  const message = test ? "Employee Created!" : "test";
+
+  return (
+    <div className="App">
+      <button onClick={openModal}>Create</button>
+      <Modal isOpen={modalIsOpen} closeModal={closeModal} children={message} />
+    </div>
+  );
 };
 
-render(<App />, document.getElementById("root"));
+ReactDOM.render(<App />, document.getElementById("root"));

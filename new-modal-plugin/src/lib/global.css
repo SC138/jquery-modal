@@ -1,15 +1,50 @@
-.popup-hidden{
-    display: none;
-}
-
-.popup-visible{
-    display: block;
+.modal-blocker {
+    position: fixed; 
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.70); 
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    z-index: 1000;
+  }
+  
+  .modal-content{
+    display: flex;
+    align-items: center;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    border: 2px solid #000;
+    background: white;
     padding: 20px;
-    background-color: red;
-    border-radius: 20px;
-}
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    width: 70%;
+    max-width: 600px;
+    height: 30px;
+  }
+
+  .close-btn{
+    position: absolute;
+    top: 0;
+    right: 0;
+    /* padding: 0.5em; */
+    border-radius: 50%;
+    /* line-height: 1; */
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    font-size: 2em; 
+    color: black; 
+    box-sizing: border-box;
+    transform: translate(50%, -50%);
+    z-index: 1;
+  }
+
+  .color-btn{
+    background-color: white;
+    border-radius: 50%;
+  }
