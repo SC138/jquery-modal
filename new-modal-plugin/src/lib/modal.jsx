@@ -1,7 +1,9 @@
 import "./global.css";
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircleXmark } from "@fortawesome/free-solid-svg-icons";
+
+
 
 const Modal = ({
   isOpen, // Indique si la modale est ouverte
