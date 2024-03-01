@@ -22,7 +22,7 @@ const Modal = ({
     if (isOpen && ajaxUrl) {
       onBeforeOpen?.(); // Vérifie si la prop est fournie et l'appelle si c'est le cas.
       fetch(ajaxUrl)
-        .then((response) => response.json()) // Ou .text() si tu attends du HTML ou du texte
+        .then((response) => response.json()) // Ou .text() si on attends du HTML ou du texte
         .then((data) => {
           onContentLoad?.(data); // Appelle le callback avec les données chargées
           setContent(data);

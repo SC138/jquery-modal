@@ -36,7 +36,7 @@ const Modal = _ref => {
     // Si la modale est ouverte et qu'une URL AJAX est fournie, charge le contenu.
     if (isOpen && ajaxUrl) {
       onBeforeOpen === null || onBeforeOpen === void 0 ? void 0 : onBeforeOpen(); // Vérifie si la prop est fournie et l'appelle si c'est le cas.
-      fetch(ajaxUrl).then(response => response.json()) // Ou .text() si tu attends du HTML ou du texte
+      fetch(ajaxUrl).then(response => response.json()) // Ou .text() si on attends du HTML ou du texte
       .then(data => {
         onContentLoad === null || onContentLoad === void 0 ? void 0 : onContentLoad(data); // Appelle le callback avec les données chargées
         setContent(data);
