@@ -73,7 +73,7 @@ const Modal = _ref => {
     className: "modal-content",
     onClick: e => e.stopPropagation()
   }, content || children, /*#__PURE__*/_react.default.createElement("button", {
-    className: "close-btn",
+    className: "close-btn ",
     onClick: () => {
       onBeforeClose === null || onBeforeClose === void 0 ? void 0 : onBeforeClose(); // Appelé juste avant que la modale ne se ferme
       closeModal();

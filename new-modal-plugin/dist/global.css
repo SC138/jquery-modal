@@ -30,7 +30,7 @@
   .close-btn{
     position: absolute;
     top: 0;
-    right: 0;
+    left: 600px;
     /* padding: 0.5em; */
     border-radius: 50%;
     /* line-height: 1; */
@@ -44,7 +44,16 @@
     z-index: 1;
   }
 
-  .color-btn{
+  .close-btn::after{
+    display: block;
+    content: '';
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     background-color: white;
     border-radius: 50%;
+    z-index: -1;
   }

@@ -1,15 +1,13 @@
 import React, { useState } from "react";
 import ReactDOM from "react-dom";
-import Modal from "./lib/modal.jsx";
-import { ModalProvider } from "./contexts/ModalContext.js";
+import Modal from "./lib/modal";
+import { ModalProvider } from "./lib/contexts/ModalContext";
 import "./lib/global.css";
 
 const App = () => {
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const openModal = () => setModalIsOpen(true);
   const closeModal = () => setModalIsOpen(false);
-
-
 
   return (
     <ModalProvider>

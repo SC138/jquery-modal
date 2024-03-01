@@ -3,8 +3,6 @@ import React, { useEffect, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircleXmark } from "@fortawesome/free-solid-svg-icons";
 
-
-
 const Modal = ({
   isOpen, // Indique si la modale est ouverte
   closeModal, // Fonction pour fermer la modale
@@ -67,7 +65,7 @@ const Modal = ({
         {/* Affichage conditionnel du contenu AJAX ou des enfants */}
         {content || children}
         <button
-          className="close-btn"
+          className="close-btn "
           onClick={() => {
             onBeforeClose?.(); // Appelé juste avant que la modale ne se ferme
             closeModal();
