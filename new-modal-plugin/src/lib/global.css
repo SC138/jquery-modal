@@ -1,4 +1,4 @@
-.modal-blocker {
+/* .modal-blocker {
     position: fixed; 
     top: 0;
     left: 0;
@@ -9,7 +9,7 @@
     justify-content: center; 
     align-items: center; 
     z-index: 1000;
-  }
+  } */
   
   .modal-content{
     display: flex;
@@ -26,14 +26,13 @@
     max-width: 600px;
     height: 30px;
   }
+ 
 
   .close-btn{
     position: absolute;
     top: 0;
     left: 600px;
-    /* padding: 0.5em; */
     border-radius: 50%;
-    /* line-height: 1; */
     border: none;
     background: transparent;
     cursor: pointer;

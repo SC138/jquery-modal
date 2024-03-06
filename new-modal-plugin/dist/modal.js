@@ -9,6 +9,8 @@ require("./global.css");
 var _react = _interopRequireWildcard(require("react"));
 var _reactFontawesome = require("@fortawesome/react-fontawesome");
 var _freeSolidSvgIcons = require("@fortawesome/free-solid-svg-icons");
+var _ModalContext = require("./contexts/ModalContext");
+// Composant de modale avec diverses fonctionnalités (props)
 const Modal = _ref => {
   let {
     isOpen,
@@ -29,9 +31,17 @@ const Modal = _ref => {
     // Appelé après que la modale s'est fermée
     onContentLoad,
     // Appelé après que le contenu AJAX de la modale a été chargé
-    onContentError // Appelé si le chargement du contenu AJAX de la modale échoue
+    onContentError,
+    // Appelé si le chargement du contenu AJAX de la modale échoue
+    style,
+    // Style pour la modale
+    contexts
   } = _ref;
+  // Utilise un état local pour stocker le contenu de la modale via AJAX
   const [content, setContent] = (0, _react.useState)(null);
+  contexts = _ModalContext.ModalContext;
+
+  // Effectue une opération AJAX au montage si isOpen et ajaxUrl sont définis
   (0, _react.useEffect)(() => {
     // Si la modale est ouverte et qu'une URL AJAX est fournie, charge le contenu.
     if (isOpen && ajaxUrl) {
@@ -46,24 +56,27 @@ const Modal = _ref => {
         console.error("Error loading modal content:", error);
       });
     }
-  }, [isOpen, ajaxUrl, onBeforeOpen, onOpen, onContentLoad, onContentError]);
+  }, [isOpen, ajaxUrl, onBeforeOpen, onOpen, onContentLoad, onContentError]); // Dépendances pour l'effet
+
+  // Ajoute un écouteur d'événement pour la touche "Escape" au montage
   (0, _react.useEffect)(() => {
     const handleEscapeKey = event => {
       if (event.key === "Escape") {
         onBeforeClose === null || onBeforeClose === void 0 ? void 0 : onBeforeClose(); // Vérifie si la prop est fournie et l'appelle
-        closeModal();
+        closeModal(); // Ferme la modale
         onClose === null || onClose === void 0 ? void 0 : onClose(); // Appelle le callback après que la modale est fermée
       }
     };
+    // Ajoute l'écouteur d'événement pour la touche "Escape"
     window.addEventListener("keydown", handleEscapeKey);
     return () => {
-      window.removeEventListener("keydown", handleEscapeKey);
+      window.removeEventListener("keydown", handleEscapeKey); // Retire l'écouteur d'événement
     };
-  }, [closeModal, onBeforeClose, onClose]);
+  }, [closeModal, onBeforeClose, onClose]); // Dépendances pour l'effet
 
   // Le contenu de la modale n'est rendu que si isOpen est vrai
   return isOpen ? /*#__PURE__*/_react.default.createElement("div", {
-    className: "modal-blocker",
+    // className="modal-blocker" // Ajoute une classe pour masquer le reste de la page si besoin
     onClick: () => {
       onBeforeClose === null || onBeforeClose === void 0 ? void 0 : onBeforeClose(); // Appelé juste avant que la modale ne se ferme
       closeModal();
@@ -71,7 +84,9 @@ const Modal = _ref => {
     }
   }, /*#__PURE__*/_react.default.createElement("div", {
     className: "modal-content",
-    onClick: e => e.stopPropagation()
+    style: style // Applique le style fourni
+    ,
+    onClick: e => e.stopPropagation() // Empêche la fermeture de la modale si on clique à l'intérieur
   }, content || children, /*#__PURE__*/_react.default.createElement("button", {
     className: "close-btn ",
     onClick: () => {
@@ -81,7 +96,7 @@ const Modal = _ref => {
     }
   }, /*#__PURE__*/_react.default.createElement(_reactFontawesome.FontAwesomeIcon, {
     icon: _freeSolidSvgIcons.faCircleXmark
-  })))) : null;
+  }), " "))) : null; // Ne rend rien si la modale n'est pas ouverte (isOpen est faux)
 };
 
 // Définition des defaultProps pour les callbacks

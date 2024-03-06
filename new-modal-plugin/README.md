@@ -65,8 +65,8 @@ Les props suivantes sont disponible pour la `Modal`
 
 ## Licence
 
-Ce projet est sous licence MIT. Voir le fichier [LICENSE] (LICENSE. txt) pour plus de détails.
+Ce projet est sous licence MIT. Voir le fichier [LICENSE](LICENSE.txt) pour plus de détails.
 
 ## Contribution
 
-Les contributions à ce projet sont les bienvenues. Veuillez consulter les issues ouverts ou soumettre des pull requests.
+Les contributions à ce projet sont les bienvenues.
