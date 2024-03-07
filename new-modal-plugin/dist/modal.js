@@ -9,7 +9,6 @@ require("./global.css");
 var _react = _interopRequireWildcard(require("react"));
 var _reactFontawesome = require("@fortawesome/react-fontawesome");
 var _freeSolidSvgIcons = require("@fortawesome/free-solid-svg-icons");
-var _ModalContext = require("./contexts/ModalContext");
 // Composant de modale avec diverses fonctionnalités (props)
 const Modal = _ref => {
   let {
@@ -33,13 +32,10 @@ const Modal = _ref => {
     // Appelé après que le contenu AJAX de la modale a été chargé
     onContentError,
     // Appelé si le chargement du contenu AJAX de la modale échoue
-    style,
-    // Style pour la modale
-    contexts
+    style // Style pour la modale
   } = _ref;
   // Utilise un état local pour stocker le contenu de la modale via AJAX
   const [content, setContent] = (0, _react.useState)(null);
-  contexts = _ModalContext.ModalContext;
 
   // Effectue une opération AJAX au montage si isOpen et ajaxUrl sont définis
   (0, _react.useEffect)(() => {

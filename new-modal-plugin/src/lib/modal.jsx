@@ -2,8 +2,6 @@ import "./global.css";
 import React, { useEffect, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircleXmark } from "@fortawesome/free-solid-svg-icons";
-import { ModalContext } from "./contexts/ModalContext";
-
 
 // Composant de modale avec diverses fonctionnalités (props)
 const Modal = ({
@@ -17,12 +15,10 @@ const Modal = ({
   onClose, // Appelé après que la modale s'est fermée
   onContentLoad, // Appelé après que le contenu AJAX de la modale a été chargé
   onContentError, // Appelé si le chargement du contenu AJAX de la modale échoue
-  style,// Style pour la modale
-  contexts,
+  style, // Style pour la modale
 }) => {
   // Utilise un état local pour stocker le contenu de la modale via AJAX
   const [content, setContent] = useState(null);
-  contexts = ModalContext;
 
   // Effectue une opération AJAX au montage si isOpen et ajaxUrl sont définis
   useEffect(() => {

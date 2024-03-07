@@ -4,6 +4,23 @@ var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefau
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = void 0;
+Object.defineProperty(exports, "Modal", {
+  enumerable: true,
+  get: function () {
+    return _modal.default;
+  }
+});
+Object.defineProperty(exports, "ModalContext", {
+  enumerable: true,
+  get: function () {
+    return _ModalContext.ModalContext;
+  }
+});
+Object.defineProperty(exports, "ModalProvider", {
+  enumerable: true,
+  get: function () {
+    return _ModalContext.ModalProvider;
+  }
+});
 var _modal = _interopRequireDefault(require("./modal"));
-var _default = exports.default = _modal.default;
+var _ModalContext = require("./contexts/ModalContext");
