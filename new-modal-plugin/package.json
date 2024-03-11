@@ -1,6 +1,6 @@
 {
   "name": "react-new-modal-plugin",
-  "version": "0.2.10",
+  "version": "0.3.2",
   "main": "dist/index.js",
   "module": "dist/index.js",
   "files": [

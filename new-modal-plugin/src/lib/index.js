@@ -8,3 +8,4 @@
 
 export { default as Modal } from "./modal";
 export { ModalProvider, ModalContext } from "./contexts/ModalContext";
+
