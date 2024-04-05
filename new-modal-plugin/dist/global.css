@@ -24,14 +24,14 @@
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     width: 70%;
     max-width: 600px;
-    height: 30px;
+    height: 55px;
   }
  
 
   .close-btn{
     position: absolute;
     top: 0;
-    left: 600px;
+    left: 566px;
     border-radius: 50%;
     border: none;
     background: transparent;
